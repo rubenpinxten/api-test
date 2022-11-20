@@ -25,9 +25,9 @@ async def get_first_quote():
 async def get_last_quote():
     return application[-1]
 
-@app.post("/quote/{quote")
-async def post_new_quote(quote: Tekst):
+@app.post("/teksts/")
+async def post_new_quote(tekst: Tekst):
     #application = application + quote 
     #with open('quotes.json', mode='w', encoding='utf-8') as csv_file:
-        #json.dump(new, csv_file)
-    return quote
+        #json.dump(quote, csv_file)
+    return tekst
