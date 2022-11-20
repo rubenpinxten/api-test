@@ -14,7 +14,7 @@ with open('quotes.json') as csv_file:
         application[line]
         line = csv_file
 
-class Quote(BaseModel):
+class Tekst(BaseModel):
     quote: str
 
 @app.get("/quote/first")
@@ -25,8 +25,8 @@ async def get_first_quote():
 async def get_last_quote():
     return application[-1]
 
-@app.post("/quote/new/")
-async def new_quote(quote: Quote) -> Quote:
+@app.post("/quote/{quote")
+async def post_new_quote(quote: Tekst):
     #application = application + quote 
     #with open('quotes.json', mode='w', encoding='utf-8') as csv_file:
         #json.dump(new, csv_file)
