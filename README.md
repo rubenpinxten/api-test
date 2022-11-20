@@ -15,3 +15,19 @@ Front-end: https://rubenpinxten.github.io/
 GitHub repository API: https://github.com/rubenpinxten/api-test
 GitHub repository front-end: https://github.com/rubenpinxten/rubenpinxten.github.io
 Hosted API: https://api-service-rubenpinxten.cloud.okteto.net/
+## Aantoon bare werking met Postman
+De eerste GET --> eerste quote uit de database
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923522-210b01d6-86dc-4728-849b-4efba59388e4.png)
+De tweede GET --> laatste quote uit de database
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923568-0a6f54de-9706-4f01-9615-8c85c3452d4c.png)
+De derde GET --> alle quotes uit de database
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923627-5b007671-ae48-4f8d-b80e-1c87dce792b3.png)
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923732-bd73149f-856f-46f3-952c-f9e0c8df0028.png)
+De POST --> hiermee kan je een quote toevoegen aan de database
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923830-cf21e34b-f1e8-46ea-97e9-1c93b9d2d285.png)
+En als bewijs dat de POST werkt.
+![afbeelding](https://user-images.githubusercontent.com/91123119/202923857-556f57ce-bc0a-439e-9068-e329a6272785.png)
+
+
+
+
