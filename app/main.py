@@ -23,11 +23,11 @@ async def get_first_quote():
 
 @app.get("/quote/last")
 async def get_last_quote():
-    return application[-1]
+    return application[9]
 
 @app.post("/items/")
 async def post_new_quote(item: Item):
-    application = application + quote 
+    application = application + item 
     with open('./quotes.json', mode='w', encoding='utf-8') as csv_file:
         json.dump(item, csv_file)
     return item
