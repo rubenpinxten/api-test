@@ -24,8 +24,7 @@ async def get_last_quote():
     tekst = quotes[-1]
     return tekst
 @app.post("/quote/new/{tekst}")
-async def new_quote():
-    tekst: str
+async def new_quote(tekst: str):
     quote["quote"] = tekst
     quotes.append(quote)
     tekst = quotes[-1]
