@@ -4,15 +4,15 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-application = {}
+application = []
 
 with open('./quotes.json') as csv_file:
     csv_file.readline()
 
     line = csv_file.readline()
     while line:
-        application[line]
-        line = csv_file
+        application.append(line)
+        line = csv_file.readline()
 
 class Item(BaseModel):
     quote: str
