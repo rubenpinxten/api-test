@@ -4,4 +4,4 @@ EXPOSE 8000
 COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./py /code/py
-CMD ["uvicorn", "py.randomizer:py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "py.main:py", "--host", "0.0.0.0", "--port", "8000"]
