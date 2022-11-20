@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import json
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -13,6 +14,9 @@ with open('quotes.json') as csv_file:
         application[line]
         line = csv_file
 
+class New(BaseModel):
+    quote: str
+
 @app.get("/quote/first")
 async def get_first_quote():
     return application[0]
@@ -21,3 +25,9 @@ async def get_first_quote():
 async def get_last_quote():
     return application[-1]
 
+@app.post("/quote/new/")
+async def new_quote(new: New):
+    application = application + new 
+    with open('quotes.json', mode='w', encoding='utf-8') as csv_file:
+        json.dump(new, csv_file)
+    return new
