@@ -6,7 +6,7 @@ app = FastAPI()
 
 application = {}
 
-with open('quotes.json') as csv_file:
+with open('./quotes.json') as csv_file:
     csv_file.readline()
 
     line = csv_file.readline()
@@ -28,6 +28,6 @@ async def get_last_quote():
 @app.post("/items/")
 async def post_new_quote(item: Item):
     application = application + quote 
-    with open('quotes.json', mode='w', encoding='utf-8') as csv_file:
+    with open('./quotes.json', mode='w', encoding='utf-8') as csv_file:
         json.dump(item, csv_file)
     return item
