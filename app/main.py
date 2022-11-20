@@ -4,30 +4,27 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-application = []
+quotes = [{"quote": "Het leven is niet een kwestie van de beste kaarten hebben, maar eerder een slechte hand op de juiste manier weten te spelen."},
+{"quote": "Het beste bewijs van liefde is vertrouwen."}, 
+{"quote": "De beste vriend zal waarschijnlijk de beste echtgenote krijgen, omdat een goed huwelijk op een talent voor vriendschap berust."}, 
+{"quote": "Geduld id het beste gebed."}, {"quote": "De beste manier om iets te leren is er les in te geven."}, 
+{"quote": "Water is het beste."}, {"quote": "Tegenslag is de beste gelegenheid om te tonen dan men karakter heeft."}, 
+{"quote": "Als je voor elke positie de beste speler kiest, heb je nog geen sterk elftal maar een team dat als los zand uiteen valt."}, 
+{"quote": "De beste manier om zich op iemand te wreken is niet op hem te gelijken."}, 
+{"quote": "Opleiding is de beste proviand op de reis naar de ouderdom."}]
 
-with open('./quotes.json') as csv_file:
-    csv_file.readline()
-
-    line = csv_file.readline()
-    while line:
-        application.append(line)
-        line = csv_file.readline()
-
-class Item(BaseModel):
-    quote: str
+quote = {}
 
 @app.get("/quote/first")
 async def get_first_quote():
-    return application[0]
+    return quotes[0]
 
 @app.get("/quote/last")
 async def get_last_quote():
-    return application[9]
+    return quotes[-1]
 
-@app.post("/items/")
-async def post_new_quote(item: Item):
-    application = application + item 
-    with open('./quotes.json', mode='w', encoding='utf-8') as csv_file:
-        json.dump(item, csv_file)
-    return item
+@app.post("/quote/new/{quote}")
+async def new_quote():
+    quote["quote"] = quote
+    quotes.append(quote)
+    return quotes[-1]
