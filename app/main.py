@@ -19,6 +19,10 @@ quote = {}
 async def get_first_quote():
     return quotes[0]
 
+@app.get("/quote/all")
+async def get_all_quotes():
+    return quotes
+
 @app.get("/quote/last")
 async def get_last_quote():
     tekst = quotes[-1]
